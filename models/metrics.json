@@ -1,0 +1,103 @@
+{
+    "dataset": {
+        "name": "UCI Hepatitis C Virus (HCV) for Egyptian Patients",
+        "rows": 1384,
+        "columns": 31
+    },
+    "note": "AST 1 and ALT 1 are dataset-specific ratio variables. They are not treated as standard U/L AST and ALT values for a clinical FIB-4 calculation.",
+    "target_A": {
+        "definition": "Stage 1 vs Stage 2-4",
+        "baseline": {
+            "model": "Routine Clinical Baseline - Target A",
+            "accuracy": 0.5058,
+            "accuracy_std": 0.0321,
+            "precision": 0.7614,
+            "precision_std": 0.0318,
+            "recall": 0.5067,
+            "recall_std": 0.0374,
+            "specificity": 0.5029,
+            "specificity_std": 0.0817,
+            "f1": 0.6077,
+            "f1_std": 0.0307,
+            "roc_auc": 0.49,
+            "roc_auc_std": 0.0499
+        },
+        "expanded": {
+            "model": "Expanded Random Forest - Target A",
+            "accuracy": 0.6445,
+            "accuracy_std": 0.0305,
+            "precision": 0.755,
+            "precision_std": 0.0181,
+            "recall": 0.7853,
+            "recall_std": 0.0326,
+            "specificity": 0.2058,
+            "specificity_std": 0.0543,
+            "f1": 0.7696,
+            "f1_std": 0.0223,
+            "roc_auc": 0.4748,
+            "roc_auc_std": 0.0509
+        }
+    },
+    "target_B": {
+        "definition": "Stage 1-2 vs Stage 3-4",
+        "baseline": {
+            "model": "Routine Clinical Baseline - Target B",
+            "accuracy": 0.5181,
+            "accuracy_std": 0.0227,
+            "precision": 0.5351,
+            "precision_std": 0.0219,
+            "recall": 0.5182,
+            "recall_std": 0.0462,
+            "specificity": 0.518,
+            "specificity_std": 0.04,
+            "f1": 0.5258,
+            "f1_std": 0.0313,
+            "roc_auc": 0.5349,
+            "roc_auc_std": 0.0297
+        },
+        "expanded": {
+            "model": "Expanded Random Forest - Target B",
+            "accuracy": 0.4899,
+            "accuracy_std": 0.0422,
+            "precision": 0.5056,
+            "precision_std": 0.0422,
+            "recall": 0.5196,
+            "recall_std": 0.0732,
+            "specificity": 0.4582,
+            "specificity_std": 0.056,
+            "f1": 0.5114,
+            "f1_std": 0.0534,
+            "roc_auc": 0.4976,
+            "roc_auc_std": 0.0535
+        }
+    },
+    "features": {
+        "baseline": [
+            "Age",
+            "BMI",
+            "Plat",
+            "AST 1",
+            "ALT 1"
+        ],
+        "expanded": [
+            "Age",
+            "BMI",
+            "Plat",
+            "AST 1",
+            "ALT 1",
+            "WBC",
+            "RBC",
+            "HGB"
+        ]
+    },
+    "feature_importance": {
+        "WBC": 0.16125125857137812,
+        "Plat": 0.15890313774289286,
+        "RBC": 0.1547279935628269,
+        "AST 1": 0.13068122381037064,
+        "ALT 1": 0.12898384001934518,
+        "Age": 0.111782093436625,
+        "BMI": 0.09517204744381252,
+        "HGB": 0.05849840541274882
+    }
+}

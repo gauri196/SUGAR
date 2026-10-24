@@ -1,0 +1,8 @@
+,non_missing,missing,missing_percent
+age_years_nhanes,9023,0,0.0
+sex_code_nhanes,9023,0,0.0
+ast_u_l,8287,736,8.16
+alt_u_l,8321,702,7.78
+platelets_10e9_l,8595,428,4.74
+liver_stiffness_median_kpa,9023,0,0.0
+liver_cap_median_dbm,9021,2,0.02

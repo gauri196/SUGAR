@@ -1,0 +1,52 @@
+[
+  {
+    "model": "C - Random Forest, baseline",
+    "features": 5,
+    "accuracy": 0.2666184971098266,
+    "balanced_accuracy": 0.26593823204607925,
+    "macro_precision": 0.26653567000118483,
+    "macro_recall": 0.26593823204607925,
+    "macro_f1": 0.26561775569159896,
+    "macro_roc_auc_ovr": 0.5128902781864613
+  },
+  {
+    "model": "A - Logistic Regression, baseline",
+    "features": 5,
+    "accuracy": 0.26372832369942195,
+    "balanced_accuracy": 0.2632024937670229,
+    "macro_precision": 0.24742432830297117,
+    "macro_recall": 0.2632024937670229,
+    "macro_f1": 0.2414129823843033,
+    "macro_roc_auc_ovr": 0.5073540521597875
+  },
+  {
+    "model": "D - Random Forest, expanded",
+    "features": 8,
+    "accuracy": 0.24421965317919075,
+    "balanced_accuracy": 0.24332470528643813,
+    "macro_precision": 0.24110080632680223,
+    "macro_recall": 0.24332470528643813,
+    "macro_f1": 0.24042905059776498,
+    "macro_roc_auc_ovr": 0.49348404120149214
+  },
+  {
+    "model": "B - Logistic Regression, expanded",
+    "features": 8,
+    "accuracy": 0.23771676300578035,
+    "balanced_accuracy": 0.23667868872248993,
+    "macro_precision": 0.21885511083697667,
+    "macro_recall": 0.23667868872248993,
+    "macro_f1": 0.22004460339149373,
+    "macro_roc_auc_ovr": 0.4997532825411346
+  },
+  {
+    "model": "Dummy - Most Frequent",
+    "features": 5,
+    "accuracy": 0.2615606936416185,
+    "balanced_accuracy": 0.25,
+    "macro_precision": 0.06539017341040462,
+    "macro_recall": 0.25,
+    "macro_f1": 0.1036655211912944,
+    "macro_roc_auc_ovr": 0.5
+  }
+]

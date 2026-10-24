@@ -1,0 +1,9 @@
+feature,original_dtype,missing_original,non_numeric_nonmissing,unique_nonmissing,minimum,median,maximum,zero_count,negative_count
+Age,int64,0,0,30,32.0,46.0,61.0,0,0
+BMI,int64,0,0,14,22.0,29.0,35.0,0,0
+Plat,float64,0,0,1375,93013.0,157916.0,226464.0,0,0
+AST 1,int64,0,0,90,39.0,83.0,128.0,0,0
+ALT 1,int64,0,0,90,39.0,83.0,128.0,0,0
+WBC,int64,0,0,1305,2991.0,7498.0,12101.0,0,0
+RBC,float64,0,0,1384,3816422.0,4438465.0,5018451.0,0,0
+HGB,int64,0,0,6,10.0,13.0,15.0,0,0

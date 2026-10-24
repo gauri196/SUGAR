@@ -1,0 +1,17 @@
+feature,feature_type,test,p_value,adjusted_p_value_BH,effect_size_name,effect_size
+BMI,continuous,Kruskal-Wallis,0.006945314804021107,0.055562518432168854,epsilon_squared,0.0066171846521960705
+Gender,categorical,Chi-square,0.09115112171770752,0.3708303747499915,cramers_v,0.06833354896532026
+Epigastric pain,categorical,Chi-square,0.09270759368749787,0.3708303747499915,cramers_v,0.0681295332556101
+Nausea/Vomting,categorical,Chi-square,0.17100650514494564,0.45601734705318836,cramers_v,0.06017088379303643
+Jaundice,categorical,Chi-square,0.2919833244967466,0.5839666489934932,cramers_v,0.05192300976809873
+Age,continuous,Kruskal-Wallis,0.29751356850938626,0.7292472056936037,epsilon_squared,0.0004965878722223316
+WBC,continuous,Kruskal-Wallis,0.7112902597476902,0.7292472056936037,epsilon_squared,0.0
+RBC,continuous,Kruskal-Wallis,0.7153333686966254,0.7292472056936037,epsilon_squared,0.0
+ALT 1,continuous,Kruskal-Wallis,0.4283520281429214,0.7292472056936037,epsilon_squared,0.0
+AST 1,continuous,Kruskal-Wallis,0.47032524900999173,0.7292472056936037,epsilon_squared,0.0
+Plat,continuous,Kruskal-Wallis,0.5964091012513453,0.7292472056936037,epsilon_squared,0.0
+HGB,continuous,Kruskal-Wallis,0.7292472056936037,0.7292472056936037,epsilon_squared,0.0
+Fatigue & generalized bone ache,categorical,Chi-square,0.6032912956901075,0.7964324956971411,cramers_v,0.036598817378357164
+Fever,categorical,Chi-square,0.5235954878287201,0.7964324956971411,cramers_v,0.04025438979229719
+Diarrhea,categorical,Chi-square,0.6968784337349985,0.7964324956971411,cramers_v,0.03222290280758565
+Headache,categorical,Chi-square,0.978056409606415,0.978056409606415,cramers_v,0.01193364457282948

@@ -1,0 +1,11 @@
+target,model,TN,FP,FN,TP
+Target A: Stage 1 vs Stages 2-4,Dummy - Most Frequent,0,336,0,1048
+Target A: Stage 1 vs Stages 2-4,"A - Logistic Regression, baseline",169,167,517,531
+Target A: Stage 1 vs Stages 2-4,"B - Logistic Regression, expanded",150,186,537,511
+Target A: Stage 1 vs Stages 2-4,"C - Random Forest, baseline",101,235,278,770
+Target A: Stage 1 vs Stages 2-4,"D - Random Forest, expanded",69,267,225,823
+Target B: Stages 1-2 vs Stages 3-4,Dummy - Most Frequent,0,668,0,716
+Target B: Stages 1-2 vs Stages 3-4,"A - Logistic Regression, baseline",346,322,345,371
+Target B: Stages 1-2 vs Stages 3-4,"B - Logistic Regression, expanded",342,326,338,378
+Target B: Stages 1-2 vs Stages 3-4,"C - Random Forest, baseline",325,343,321,395
+Target B: Stages 1-2 vs Stages 3-4,"D - Random Forest, expanded",306,362,344,372

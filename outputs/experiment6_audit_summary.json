@@ -1,0 +1,41 @@
+{
+  "original_rows": 1385,
+  "original_columns": 29,
+  "duplicate_rows": 0,
+  "missing_target_rows": 1,
+  "valid_four_stage_rows": 1384,
+  "stage_counts": {
+    "1": 336,
+    "2": 332,
+    "3": 354,
+    "4": 362
+  },
+  "columns_with_missing_values": {
+    "Baselinehistological staging": {
+      "count": 1,
+      "percent": 0.07
+    }
+  },
+  "baseline_features_checked": [
+    "Age",
+    "BMI",
+    "Plat",
+    "AST 1",
+    "ALT 1",
+    "WBC",
+    "RBC",
+    "HGB"
+  ],
+  "time_indexed_fields_found": [
+    "ALT 12",
+    "ALT 24",
+    "ALT 36",
+    "ALT 48",
+    "ALT after 24 w",
+    "RNA Base",
+    "RNA 4",
+    "RNA 12",
+    "RNA EOT",
+    "RNA EF"
+  ]
+}

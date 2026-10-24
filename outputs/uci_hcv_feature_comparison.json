@@ -1,0 +1,55 @@
+[
+  {
+    "feature_group": "Demographics_only",
+    "features": [
+      "Age",
+      "Sex"
+    ],
+    "accuracy_mean": 0.4691056910569105,
+    "accuracy_std": 0.043638168781527285,
+    "balanced_accuracy_mean": 0.23274037500734734,
+    "balanced_accuracy_std": 0.05592595584768814,
+    "macro_f1_mean": 0.18562369650536997,
+    "macro_f1_std": 0.03052504485864145
+  },
+  {
+    "feature_group": "Basic_liver_markers",
+    "features": [
+      "Age",
+      "Sex",
+      "ALT",
+      "AST",
+      "ALB",
+      "BIL"
+    ],
+    "accuracy_mean": 0.9284552845528455,
+    "accuracy_std": 0.01846799462048869,
+    "balanced_accuracy_mean": 0.5558130841121496,
+    "balanced_accuracy_std": 0.14129358902961778,
+    "macro_f1_mean": 0.586264710090544,
+    "macro_f1_std": 0.14332836732141027
+  },
+  {
+    "feature_group": "Expanded_liver_markers",
+    "features": [
+      "Age",
+      "Sex",
+      "ALT",
+      "AST",
+      "ALB",
+      "BIL",
+      "ALP",
+      "GGT",
+      "PROT",
+      "CHE",
+      "CHOL",
+      "CREA"
+    ],
+    "accuracy_mean": 0.9284552845528455,
+    "accuracy_std": 0.013506705468159479,
+    "balanced_accuracy_mean": 0.5551059190031153,
+    "balanced_accuracy_std": 0.08190079315282207,
+    "macro_f1_mean": 0.5931696061960589,
+    "macro_f1_std": 0.09767485031475155
+  }
+]

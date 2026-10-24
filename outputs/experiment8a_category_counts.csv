@@ -1,0 +1,17 @@
+feature,value,count
+Gender,1,707
+Gender,2,678
+Fever,2,714
+Fever,1,671
+Nausea/Vomting,2,696
+Nausea/Vomting,1,689
+Headache,1,698
+Headache,2,687
+Diarrhea,2,696
+Diarrhea,1,689
+Fatigue & generalized bone ache,1,694
+Fatigue & generalized bone ache,2,691
+Jaundice,2,694
+Jaundice,1,691
+Epigastric pain,2,698
+Epigastric pain,1,687

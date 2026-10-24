@@ -1,0 +1,81 @@
+model,actual_stage,predicted_stage,count
+Dummy - Most Frequent,1,1,0
+Dummy - Most Frequent,1,2,0
+Dummy - Most Frequent,1,3,0
+Dummy - Most Frequent,1,4,336
+Dummy - Most Frequent,2,1,0
+Dummy - Most Frequent,2,2,0
+Dummy - Most Frequent,2,3,0
+Dummy - Most Frequent,2,4,332
+Dummy - Most Frequent,3,1,0
+Dummy - Most Frequent,3,2,0
+Dummy - Most Frequent,3,3,0
+Dummy - Most Frequent,3,4,354
+Dummy - Most Frequent,4,1,0
+Dummy - Most Frequent,4,2,0
+Dummy - Most Frequent,4,3,0
+Dummy - Most Frequent,4,4,362
+"A - Logistic Regression, baseline",1,1,41
+"A - Logistic Regression, baseline",1,2,136
+"A - Logistic Regression, baseline",1,3,45
+"A - Logistic Regression, baseline",1,4,114
+"A - Logistic Regression, baseline",2,1,46
+"A - Logistic Regression, baseline",2,2,134
+"A - Logistic Regression, baseline",2,3,48
+"A - Logistic Regression, baseline",2,4,104
+"A - Logistic Regression, baseline",3,1,52
+"A - Logistic Regression, baseline",3,2,131
+"A - Logistic Regression, baseline",3,3,37
+"A - Logistic Regression, baseline",3,4,134
+"A - Logistic Regression, baseline",4,1,58
+"A - Logistic Regression, baseline",4,2,110
+"A - Logistic Regression, baseline",4,3,41
+"A - Logistic Regression, baseline",4,4,153
+"B - Logistic Regression, expanded",1,1,28
+"B - Logistic Regression, expanded",1,2,123
+"B - Logistic Regression, expanded",1,3,63
+"B - Logistic Regression, expanded",1,4,122
+"B - Logistic Regression, expanded",2,1,47
+"B - Logistic Regression, expanded",2,2,116
+"B - Logistic Regression, expanded",2,3,63
+"B - Logistic Regression, expanded",2,4,106
+"B - Logistic Regression, expanded",3,1,59
+"B - Logistic Regression, expanded",3,2,129
+"B - Logistic Regression, expanded",3,3,47
+"B - Logistic Regression, expanded",3,4,119
+"B - Logistic Regression, expanded",4,1,57
+"B - Logistic Regression, expanded",4,2,102
+"B - Logistic Regression, expanded",4,3,65
+"B - Logistic Regression, expanded",4,4,138
+"C - Random Forest, baseline",1,1,91
+"C - Random Forest, baseline",1,2,66
+"C - Random Forest, baseline",1,3,69
+"C - Random Forest, baseline",1,4,110
+"C - Random Forest, baseline",2,1,68
+"C - Random Forest, baseline",2,2,78
+"C - Random Forest, baseline",2,3,89
+"C - Random Forest, baseline",2,4,97
+"C - Random Forest, baseline",3,1,83
+"C - Random Forest, baseline",3,2,80
+"C - Random Forest, baseline",3,3,88
+"C - Random Forest, baseline",3,4,103
+"C - Random Forest, baseline",4,1,84
+"C - Random Forest, baseline",4,2,81
+"C - Random Forest, baseline",4,3,85
+"C - Random Forest, baseline",4,4,112
+"D - Random Forest, expanded",1,1,67
+"D - Random Forest, expanded",1,2,88
+"D - Random Forest, expanded",1,3,64
+"D - Random Forest, expanded",1,4,117
+"D - Random Forest, expanded",2,1,69
+"D - Random Forest, expanded",2,2,85
+"D - Random Forest, expanded",2,3,84
+"D - Random Forest, expanded",2,4,94
+"D - Random Forest, expanded",3,1,70
+"D - Random Forest, expanded",3,2,106
+"D - Random Forest, expanded",3,3,65
+"D - Random Forest, expanded",3,4,113
+"D - Random Forest, expanded",4,1,82
+"D - Random Forest, expanded",4,2,84
+"D - Random Forest, expanded",4,3,75
+"D - Random Forest, expanded",4,4,121

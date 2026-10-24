@@ -1,0 +1,123 @@
+{
+  "experiment": "UCI HCV five-class exploratory classification",
+  "dataset_rows": 615,
+  "feature_columns": [
+    "Age",
+    "Sex",
+    "ALB",
+    "ALP",
+    "ALT",
+    "AST",
+    "BIL",
+    "CHE",
+    "CHOL",
+    "CREA",
+    "GGT",
+    "PROT"
+  ],
+  "target": "Category",
+  "class_counts": {
+    "0=Blood Donor": 533,
+    "3=Cirrhosis": 30,
+    "1=Hepatitis": 24,
+    "2=Fibrosis": 21,
+    "0s=suspect Blood Donor": 7
+  },
+  "test_accuracy": 0.9512195121951219,
+  "test_balanced_accuracy": 0.5866666666666667,
+  "test_macro_f1": 0.6123865381929898,
+  "classification_report": {
+    "0=Blood Donor": {
+      "precision": 0.9727272727272728,
+      "recall": 1.0,
+      "f1-score": 0.9861751152073732,
+      "support": 107.0
+    },
+    "0s=suspect Blood Donor": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 1.0
+    },
+    "1=Hepatitis": {
+      "precision": 0.75,
+      "recall": 0.6,
+      "f1-score": 0.6666666666666666,
+      "support": 5.0
+    },
+    "2=Fibrosis": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1-score": 0.5,
+      "support": 4.0
+    },
+    "3=Cirrhosis": {
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.9090909090909091,
+      "support": 6.0
+    },
+    "accuracy": 0.9512195121951219,
+    "macro avg": {
+      "precision": 0.6445454545454545,
+      "recall": 0.5866666666666667,
+      "f1-score": 0.6123865381929898,
+      "support": 123.0
+    },
+    "weighted avg": {
+      "precision": 0.9417220990391723,
+      "recall": 0.9512195121951219,
+      "f1-score": 0.9455985050005505,
+      "support": 123.0
+    }
+  },
+  "confusion_matrix_labels": [
+    "0=Blood Donor",
+    "0s=suspect Blood Donor",
+    "1=Hepatitis",
+    "2=Fibrosis",
+    "3=Cirrhosis"
+  ],
+  "confusion_matrix": [
+    [
+      107,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      3,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      5
+    ]
+  ],
+  "limitations": [
+    "Small and imbalanced diagnostic categories",
+    "Single stratified holdout evaluation",
+    "Exploratory results, not clinical validation"
+  ]
+}
