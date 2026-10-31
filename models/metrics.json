@@ -71,6 +71,42 @@
             "roc_auc_std": 0.0535
         }
     },
+    "held_out_evaluation": {
+        "method": "Stratified 80/20 train/test holdout split",
+        "target": "Target B (Stage 1-2 vs Stage 3-4)",
+        "baseline": {
+            "test_rows": 277,
+            "accuracy": 0.5162,
+            "balanced_accuracy": 0.5169,
+            "precision": 0.5338,
+            "recall": 0.4965,
+            "specificity": 0.5373,
+            "f1": 0.5145,
+            "roc_auc": 0.504,
+            "confusion_matrix": {
+                "tn": 72,
+                "fp": 62,
+                "fn": 72,
+                "tp": 71
+            }
+        },
+        "expanded": {
+            "test_rows": 277,
+            "accuracy": 0.4982,
+            "balanced_accuracy": 0.4968,
+            "precision": 0.5133,
+            "recall": 0.5385,
+            "specificity": 0.4552,
+            "f1": 0.5256,
+            "roc_auc": 0.4927,
+            "confusion_matrix": {
+                "tn": 61,
+                "fp": 73,
+                "fn": 66,
+                "tp": 77
+            }
+        }
+    },
     "features": {
         "baseline": [
             "Age",

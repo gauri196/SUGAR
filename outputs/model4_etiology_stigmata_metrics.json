@@ -1,0 +1,100 @@
+{
+  "model_name": "Model 4: Disease Etiology & Clinical Stigmata",
+  "dataset": {
+    "name": "Mayo Clinic Primary Biliary Cirrhosis (PBC) Trial",
+    "source_file": "data/cirrhosis.csv",
+    "total_rows": 412,
+    "train_rows": 329,
+    "test_rows": 83
+  },
+  "target": {
+    "name": "advanced_fibrosis",
+    "definition": "Histological Biopsy Stage 3-4 vs Stage 1-2",
+    "prevalence": 0.7257
+  },
+  "features": {
+    "numeric": [
+      "Age_years",
+      "Bilirubin",
+      "Albumin",
+      "Platelets",
+      "SGOT",
+      "Alk_Phos",
+      "Copper",
+      "Prothrombin"
+    ],
+    "categorical": [
+      "Sex",
+      "Ascites",
+      "Hepatomegaly",
+      "Spiders",
+      "Edema"
+    ],
+    "all_features": [
+      "Age_years",
+      "Bilirubin",
+      "Albumin",
+      "Platelets",
+      "SGOT",
+      "Alk_Phos",
+      "Copper",
+      "Prothrombin",
+      "Sex",
+      "Ascites",
+      "Hepatomegaly",
+      "Spiders",
+      "Edema"
+    ]
+  },
+  "cross_validation_5fold": {
+    "accuracy": 0.6778,
+    "accuracy_std": 0.0222,
+    "balanced_accuracy": 0.6605,
+    "balanced_accuracy_std": 0.0495,
+    "precision": 0.8348,
+    "precision_std": 0.0441,
+    "recall": 0.6988,
+    "recall_std": 0.0427,
+    "f1": 0.7587,
+    "f1_std": 0.0179,
+    "roc_auc": 0.7099,
+    "roc_auc_std": 0.032
+  },
+  "held_out_test_metrics": {
+    "accuracy": 0.7108,
+    "balanced_accuracy": 0.6525,
+    "precision": 0.8103,
+    "recall": 0.7833,
+    "specificity": 0.5217,
+    "f1": 0.7966,
+    "roc_auc": 0.687,
+    "confusion_matrix": {
+      "tn": 12,
+      "fp": 11,
+      "fn": 13,
+      "tp": 47
+    }
+  },
+  "feature_importances": {
+    "Albumin": 0.12,
+    "Bilirubin": 0.1131,
+    "Age_years": 0.1039,
+    "Platelets": 0.1037,
+    "Copper": 0.1025,
+    "SGOT": 0.0908,
+    "Prothrombin": 0.0779,
+    "Alk_Phos": 0.0676,
+    "Hepatomegaly_Y": 0.0459,
+    "Spiders_Y": 0.0435,
+    "Hepatomegaly_N": 0.0425,
+    "Spiders_N": 0.0344,
+    "Edema_N": 0.0326,
+    "Edema_S": 0.0085,
+    "Sex_F": 0.0039,
+    "Sex_M": 0.0037,
+    "Ascites_N": 0.0021,
+    "Edema_Y": 0.002,
+    "Ascites_Y": 0.0015
+  },
+  "scientific_disclaimer": "Research-grade predictive model trained on biopsy-confirmed Primary Biliary Cirrhosis trial cohort. Evaluates clinical stigmata (ascites, hepatomegaly, spiders, edema) and laboratory biomarkers. Not for autonomous clinical diagnosis or treatment decisions."
+}

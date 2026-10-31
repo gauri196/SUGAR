@@ -406,25 +406,25 @@ export const Overview: React.FC<OverviewProps> = ({ onNavigate }) => {
           </div>
 
           {/* Primary CTAs */}
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
             <button
-              onClick={() => onNavigate('risklab')}
+              onClick={() => onNavigate('assessment')}
               className="btn btn-primary"
-              id="cta-risklab"
-              style={{ padding: '12px 24px', fontSize: '0.95rem' }}
+              id="cta-start-assessment"
+              style={{ padding: '14px 28px', fontSize: '1rem', fontWeight: 600 }}
             >
               <Activity size={18} />
-              <span>Fibrosis Assessment</span>
-              <ArrowRight size={15} />
+              <span>Start Assessment</span>
+              <ArrowRight size={16} />
             </button>
             <button
               onClick={() => onNavigate('research')}
               className="btn btn-secondary"
-              id="cta-research"
-              style={{ padding: '12px 24px', fontSize: '0.95rem' }}
+              id="cta-explore-research"
+              style={{ padding: '14px 24px', fontSize: '0.95rem' }}
             >
               <BarChart3 size={18} />
-              <span>Research Evidence</span>
+              <span>Explore Research</span>
             </button>
           </div>
         </div>
@@ -553,10 +553,10 @@ export const Overview: React.FC<OverviewProps> = ({ onNavigate }) => {
         </h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px' }}>
-          {/* Risk Stratification Lab — PRIMARY */}
+          {/* Patient Assessment Workflow — PRIMARY */}
           <div
-            onClick={() => onNavigate('risklab')}
-            id="nav-risklab"
+            onClick={() => onNavigate('assessment')}
+            id="nav-assessment"
             style={{
               cursor: 'pointer',
               background: 'linear-gradient(135deg, rgba(25, 22, 109, 0.5) 0%, rgba(10, 14, 28, 0.9) 100%)',
@@ -583,13 +583,11 @@ export const Overview: React.FC<OverviewProps> = ({ onNavigate }) => {
             </div>
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#ffffff', fontWeight: 600 }}>Risk Stratification Lab</h3>
-                <span style={{ fontSize: '0.75rem', color: 'var(--ice-blue)', background: 'rgba(25,22,109,0.6)', border: '1px solid var(--border-active)', padding: '2px 8px', borderRadius: '12px', fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>Primary</span>
+                <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#ffffff', fontWeight: 600 }}>Patient Assessment Workflow</h3>
+                <span style={{ fontSize: '0.75rem', color: 'var(--ice-blue)', background: 'rgba(25,22,109,0.6)', border: '1px solid var(--border-active)', padding: '2px 8px', borderRadius: '12px', fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>Primary Workflow</span>
               </div>
               <p style={{ margin: 0, fontSize: '0.9rem', color: '#94a3b8', lineHeight: 1.55 }}>
-                Enter patient biomarkers, compute real-time FIB-4 index, and compare Baseline Logistic Regression
-                vs. Expanded Random Forest predictions from the FastAPI backend — with full transparency on inputs
-                and limitations.
+                Intake patient laboratory reports, verify clinical variables, calculate standard FIB-4 baseline risk, compare the progressive 4-tier ML pipeline, and review diagnostic concordance in a unified clinical report.
               </p>
             </div>
             <ArrowRight size={18} style={{ color: 'var(--steel-blue)', flexShrink: 0, marginTop: '4px' }} />

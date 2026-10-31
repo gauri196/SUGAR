@@ -5,6 +5,7 @@ import { Navbar, SectionId } from './components/layout/Navbar';
 import { Overview } from './components/overview/Overview';
 import { BodyLab } from './components/3d/BodyLab';
 import { RiskLab } from './components/inference/RiskLab';
+import { AssessmentFlow } from './components/assessment/AssessmentFlow';
 import { ResearchLab } from './components/research/ResearchLab';
 import { ModelArena } from './components/arena/ModelArena';
 import { MethodsLimitations } from './components/methods/MethodsLimitations';
@@ -23,8 +24,10 @@ export function App() {
       {/* 3. Main Workspace Container */}
       <main className="container flex-1 py-6" style={{ width: '100%' }}>
         {activeSection === 'overview' && <Overview onNavigate={setActiveSection} />}
+        {(activeSection === 'assessment' || activeSection === 'risklab') && (
+          <AssessmentFlow onNavigateToResearch={() => setActiveSection('research')} />
+        )}
         {activeSection === 'bodylab' && <BodyLab />}
-        {activeSection === 'risklab' && <RiskLab />}
         {activeSection === 'research' && <ResearchLab />}
         {activeSection === 'arena' && <ModelArena />}
         {activeSection === 'methods' && <MethodsLimitations />}

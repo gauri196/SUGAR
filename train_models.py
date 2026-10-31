@@ -15,6 +15,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
     accuracy_score,
+    balanced_accuracy_score,
     precision_score,
     recall_score,
     f1_score,
@@ -415,6 +416,83 @@ expanded_B_results = run_cross_validation(
 
 
 # ============================================================
+# 13b. DEFENSIBLE HELD-OUT EVALUATION (80/20 STRATIFIED SPLIT)
+# ============================================================
+
+print("\n\n########################################")
+print("HELD-OUT EVALUATION ON TARGET B (20% TEST SET)")
+print("########################################")
+
+X_tr_b, X_te_b, y_tr_b, y_te_b = train_test_split(
+    X_baseline_B,
+    y_B,
+    test_size=0.20,
+    random_state=RANDOM_STATE,
+    stratify=y_B
+)
+
+X_tr_e, X_te_e, y_tr_e, y_te_e = train_test_split(
+    X_expanded_B,
+    y_B,
+    test_size=0.20,
+    random_state=RANDOM_STATE,
+    stratify=y_B
+)
+
+# Fit baseline on train split only
+holdout_baseline_model = Pipeline([
+    ("imputer", SimpleImputer(strategy="median")),
+    ("scaler", StandardScaler()),
+    ("model", LogisticRegression(max_iter=2000, class_weight="balanced", random_state=RANDOM_STATE))
+])
+holdout_baseline_model.fit(X_tr_b, y_tr_b)
+base_preds = holdout_baseline_model.predict(X_te_b)
+base_probs = holdout_baseline_model.predict_proba(X_te_b)[:, 1]
+
+tn_b, fp_b, fn_b, tp_b = confusion_matrix(y_te_b, base_preds).ravel()
+spec_b = tn_b / (tn_b + fp_b) if (tn_b + fp_b) > 0 else 0.0
+
+held_out_baseline_B = {
+    "test_rows": len(y_te_b),
+    "accuracy": round(float(accuracy_score(y_te_b, base_preds)), 4),
+    "balanced_accuracy": round(float(balanced_accuracy_score(y_te_b, base_preds)), 4),
+    "precision": round(float(precision_score(y_te_b, base_preds, zero_division=0)), 4),
+    "recall": round(float(recall_score(y_te_b, base_preds, zero_division=0)), 4),
+    "specificity": round(float(spec_b), 4),
+    "f1": round(float(f1_score(y_te_b, base_preds, zero_division=0)), 4),
+    "roc_auc": round(float(roc_auc_score(y_te_b, base_probs)), 4),
+    "confusion_matrix": {"tn": int(tn_b), "fp": int(fp_b), "fn": int(fn_b), "tp": int(tp_b)}
+}
+
+# Fit expanded on train split only
+holdout_expanded_model = Pipeline([
+    ("imputer", SimpleImputer(strategy="median")),
+    ("model", RandomForestClassifier(n_estimators=300, max_depth=8, min_samples_split=5, min_samples_leaf=2, class_weight="balanced", random_state=RANDOM_STATE, n_jobs=-1))
+])
+holdout_expanded_model.fit(X_tr_e, y_tr_e)
+exp_preds = holdout_expanded_model.predict(X_te_e)
+exp_probs = holdout_expanded_model.predict_proba(X_te_e)[:, 1]
+
+tn_e, fp_e, fn_e, tp_e = confusion_matrix(y_te_e, exp_preds).ravel()
+spec_e = tn_e / (tn_e + fp_e) if (tn_e + fp_e) > 0 else 0.0
+
+held_out_expanded_B = {
+    "test_rows": len(y_te_e),
+    "accuracy": round(float(accuracy_score(y_te_e, exp_preds)), 4),
+    "balanced_accuracy": round(float(balanced_accuracy_score(y_te_e, exp_preds)), 4),
+    "precision": round(float(precision_score(y_te_e, exp_preds, zero_division=0)), 4),
+    "recall": round(float(recall_score(y_te_e, exp_preds, zero_division=0)), 4),
+    "specificity": round(float(spec_e), 4),
+    "f1": round(float(f1_score(y_te_e, exp_preds, zero_division=0)), 4),
+    "roc_auc": round(float(roc_auc_score(y_te_e, exp_probs)), 4),
+    "confusion_matrix": {"tn": int(tn_e), "fp": int(fp_e), "fn": int(fn_e), "tp": int(tp_e)}
+}
+
+print("Baseline Model B Held-Out ROC-AUC:", held_out_baseline_B["roc_auc"])
+print("Expanded Model B Held-Out ROC-AUC:", held_out_expanded_B["roc_auc"])
+
+
+# ============================================================
 # 14. TRAIN FINAL MODELS
 # ============================================================
 #
@@ -577,6 +655,13 @@ metrics = {
         "expanded": expanded_B_results
     },
 
+    "held_out_evaluation": {
+        "method": "Stratified 80/20 train/test holdout split",
+        "target": "Target B (Stage 1-2 vs Stage 3-4)",
+        "baseline": held_out_baseline_B,
+        "expanded": held_out_expanded_B
+    },
+
     "features": {
         "baseline": baseline_features,
         "expanded": expanded_features
@@ -609,15 +694,15 @@ print("========================================")
 print("\nCreated files:")
 
 print(
-    f"✓ {BASELINE_MODEL_PATH}"
+    f"[OK] {BASELINE_MODEL_PATH}"
 )
 
 print(
-    f"✓ {EXPANDED_MODEL_PATH}"
+    f"[OK] {EXPANDED_MODEL_PATH}"
 )
 
 print(
-    f"✓ {METRICS_PATH}"
+    f"[OK] {METRICS_PATH}"
 )
 
 print("\nThe models are ready for the application prototype.")

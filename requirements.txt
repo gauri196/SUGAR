@@ -2,3 +2,11 @@ pandas
 numpy
 scikit-learn
 joblib
+fastapi
+uvicorn
+pydantic
+pytest
+httpx
+sqlalchemy>=2.0.0
+alembic>=1.15.0
+pypdf>=5.0.0

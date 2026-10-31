@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { checkBackendHealth } from '../../services/api';
 
-export type SectionId = 'overview' | 'bodylab' | 'risklab' | 'research' | 'arena' | 'methods';
+export type SectionId = 'overview' | 'assessment' | 'research' | 'arena' | 'methods' | 'bodylab' | 'risklab';
 
 interface NavbarProps {
   activeSection: SectionId;
@@ -37,9 +37,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onSelectSection }
     };
   }, []);
 
-  const navItems: { id: SectionId; label: string; icon: React.ReactNode }[] = [
+  const navItems: { id: SectionId; label: string; icon: React.ReactNode; isPrimary?: boolean }[] = [
     { id: 'overview', label: 'Overview', icon: <Eye size={16} /> },
-    { id: 'risklab', label: 'Risk Stratification', icon: <Activity size={16} /> },
+    { id: 'assessment', label: 'Patient Assessment', icon: <Activity size={16} />, isPrimary: true },
     { id: 'research', label: 'Research Lab', icon: <BarChart3 size={16} /> },
     { id: 'arena', label: 'Model Arena', icon: <Swords size={16} /> },
     { id: 'methods', label: 'Methods & Limitations', icon: <BookOpen size={16} /> },
@@ -108,6 +108,22 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onSelectSection }
               >
                 <span style={{ color: isActive ? '#A9D4E7' : '#80B3D0' }}>{item.icon}</span>
                 <span>{item.label}</span>
+                {item.isPrimary && (
+                  <span
+                    style={{
+                      fontSize: '0.65rem',
+                      background: isActive ? 'rgba(169, 212, 231, 0.2)' : 'rgba(21, 53, 104, 0.6)',
+                      color: isActive ? '#A9D4E7' : '#80B3D0',
+                      border: '1px solid rgba(128, 179, 208, 0.3)',
+                      padding: '1px 5px',
+                      borderRadius: '4px',
+                      fontFamily: 'JetBrains Mono',
+                      fontWeight: 600,
+                    }}
+                  >
+                    WORKFLOW
+                  </span>
+                )}
               </button>
             );
           })}
